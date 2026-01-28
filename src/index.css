@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar එකේ පළල */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Scrollbar Track (පිටුපස) - කළු පාට */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Scrollbar Thumb (අපි අල්ලන කොටස) - තද නිල් සහ කොටු හැඩය */
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a; /* Dark Blue (Blue-900) */
+  border-radius: 0px;   /* Rectangle හැඩය එන්න මෙය 0px කරන්න */
+}
+
+/* Mouse එක උඩට ගෙනාවම පාට වෙනස් වීම */
+::-webkit-scrollbar-thumb:hover {
+  background: #172554; /* ඊටත් වඩා තද නිල් පාටක් (Blue-950) */
+}
