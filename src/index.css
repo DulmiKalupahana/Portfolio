@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* index.css එකේ මෙහෙම දාන්න */
+body {
+  background-color: #0B1120;
+  color: white;
+}
+
 /* --- Custom Scrollbar Styling --- */
 
 /* Scrollbar  */
