@@ -27,7 +27,7 @@ function About() {
     }
   ];
 
-  // --- Typewriter Logic (About Me Card) ---
+  // --- Typewriter Logic ---
   const [charCount, setCharCount] = useState(0);
   const [startTyping, setStartTyping] = useState(false);
   const totalChars = 200; 
@@ -57,19 +57,14 @@ function About() {
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ repeat: Infinity, duration: 0.6 }}
-        className="inline-block w-[2px] h-4 bg-[#0077B6] ml-0.5 align-middle"
+        className="inline-block w-[2px] h-3.5 bg-[#0077B6] ml-0.5 align-middle"
       />
     );
   };
 
-  // --- Clean Skills Animations ---
   const skillTagVariants = {
     hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
   };
 
   return (
@@ -105,32 +100,33 @@ function About() {
               </div>
             </motion.div>
 
-            {/* Code Card */}
+            {/* Code Card - Font size reduced here */}
             <motion.div variants={fadeInUp} onViewportEnter={() => setStartTyping(true)} onViewportLeave={() => { setStartTyping(false); setCharCount(0); }} className="lg:col-span-5 relative mt-12 lg:mt-0 w-full max-w-lg mx-auto lg:max-w-none px-2">
               <div className="bg-[#111A2E] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl relative z-10 flex flex-col justify-start overflow-hidden">
-                <div className="font-mono text-[16px] sm:text-base md:text-[16px] space-y-2 sm:space-y-3 leading-relaxed text-left relative z-20">
+                {/* Font set to text-sm (14px) and sm:text-[15px] */}
+                <div className="font-mono text-sm sm:text-[15px] space-y-2 leading-relaxed text-left relative z-20">
                   <p>
                     <span className="text-[#C678DD]">{type("const", 0)}</span>
                     <span className="text-[#61AFEF] font-semibold ml-2">{type("developer", 6)}</span>
                     <span className="text-white ml-2">{type("= {", 16)}<Cursor currentStart={16} text="= {" /></span>
                   </p>
                   
-                  <p className="pl-5 sm:pl-8 text-white whitespace-nowrap">
+                  <p className="pl-5 text-white whitespace-nowrap">
                     {type("name:", 22)} <span className="text-[#98C379]">{type("'Dulmi Kalupahana',", 28)}<Cursor currentStart={28} text="'Dulmi Kalupahana'," /></span>
                   </p>
                   
-                  <p className="pl-5 sm:pl-8 text-white whitespace-nowrap">
+                  <p className="pl-5 text-white whitespace-nowrap">
                     {type("role:", 60)} <span className="text-[#98C379]">{type("'Software Engineer',", 66)}<Cursor currentStart={66} text="'Software Engineer'," /></span>
                   </p>
                   
-                  <p className="pl-5 sm:pl-8 text-white whitespace-nowrap">
+                  <p className="pl-5 text-white whitespace-nowrap">
                     {type("passion:", 95)} <span className="text-white">{type("[", 104)}</span>
                     <span className="text-[#98C379]">{type("'Coding',", 105)}</span>
                     <span className="text-[#98C379] ml-1">{type("'Problem Solving'", 115)}<Cursor currentStart={115} text="'Problem Solving'" /></span>
                     <span className="text-white">{type("],", 140)}</span>
                   </p>
                   
-                  <p className="pl-5 sm:pl-8 text-white whitespace-nowrap">
+                  <p className="pl-5 text-white whitespace-nowrap">
                     {type("status:", 145)} <span className="text-[#98C379]">{type("'Undergraduate'", 153)}<Cursor currentStart={153} text="'Undergraduate'" /></span>
                   </p>
                   
@@ -142,7 +138,7 @@ function About() {
           </div>
         </motion.div>
         
-        {/* --- Refined Technical Skills --- */}
+        {/* Technical Skills Section */}
         <div className="mt-20">
           <motion.h3
             initial={{ opacity: 0, x: -20 }}
@@ -168,25 +164,12 @@ function About() {
                   <h4 className="text-lg font-semibold text-white tracking-wide">{item.category}</h4>
                 </div>
 
-                {/* Individual Skill Tags */}
-                <motion.div
-                  className="flex flex-wrap gap-2.5"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={{
-                    visible: { transition: { staggerChildren: 0.04 } }
-                  }}>
+                <motion.div className="flex flex-wrap gap-2.5" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ visible: { transition: { staggerChildren: 0.04 } } }}>
                   {item.skills.map((skill) => (
                     <motion.span
                       key={skill}
                       variants={skillTagVariants}
-                      whileHover={{
-                        y: -3,
-                        backgroundColor: "rgba(0, 119, 182, 0.15)",
-                        borderColor: "rgba(0, 119, 182, 0.5)",
-                        color: "#fff"
-                      }}
+                      whileHover={{ y: -3, backgroundColor: "rgba(0, 119, 182, 0.15)", borderColor: "rgba(0, 119, 182, 0.5)", color: "#fff" }}
                       className="px-3.5 py-1.5 text-[13px] text-gray-400 bg-[#111A2E]/50 border border-white/5 rounded-md cursor-default transition-all duration-300">
                       {skill}
                     </motion.span>

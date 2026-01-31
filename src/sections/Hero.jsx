@@ -9,7 +9,6 @@ function Hero() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  // Typewriter logic for "HELLO, I'M"
   const fullText = "HELLO, I’M";
   const [displayedText, setDisplayedText] = useState("");
 
@@ -49,7 +48,7 @@ function Hero() {
             {displayedText}
           </motion.h2>
 
-          {/* DULMI */}
+          {/* DULMI - Aligned 'D' under 'L' of HELLO on mobile */}
           <motion.h1
             variants={{
               hidden: { opacity: 0, x: -40 },
@@ -59,21 +58,23 @@ function Hero() {
                 transition: { duration: 0.8, delay: 1, ease: "easeOut" }
               }
             }}
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-[110px] font-bold text-white mb-10 md:mb-24 leading-tight md:leading-none md:pl-24 transition-all">
+            // pl-14 added for mobile to push 'D' under 'L'
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-[110px] font-bold text-white mb-10 md:mb-24 leading-tight md:leading-none pl-14 sm:pl-20 md:pl-24 transition-all"
+          >
             Dulmi
           </motion.h1>
 
-          {/* BUTTONS */}
-          <motion.div variants={fadeInUp} className="flex flex-wrap gap-5 justify-start mb-6">
+          {/* BUTTONS - Same line on mobile */}
+          <motion.div variants={fadeInUp} className="flex flex-row gap-3 sm:gap-5 justify-start mb-6 w-full max-w-sm sm:max-w-none">
             <button
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-3 bg-[#0077B6] text-white font-semibold rounded-md hover:bg-[#005F92] transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95"
+              className="flex-1 sm:flex-none px-4 sm:px-8 py-3 bg-[#0077B6] text-white text-[13px] sm:text-base font-semibold rounded-md hover:bg-[#005F92] transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95 whitespace-nowrap"
             >
               View Projects
             </button>
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-3 border-2 border-[#0077B6] text-white font-semibold rounded-md hover:bg-[#0077B6] hover:text-white transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95"
+              className="flex-1 sm:flex-none px-4 sm:px-8 py-3 border-2 border-[#0077B6] text-white text-[13px] sm:text-base font-semibold rounded-md hover:bg-[#0077B6] hover:text-white transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95 whitespace-nowrap"
             >
               Contact Me
             </button>
@@ -98,7 +99,7 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center md:justify-end order-1 md:order-2"
         >
-        <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-8 border-white/5 shadow-2xl relative z-10 mt-10 md:mt-0">
+          <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-8 border-white/5 shadow-2xl relative z-10 mt-10 md:mt-0">
             <motion.img whileHover={{ scale: 1.05 }} src={profile} alt="Dulmi" className="w-full h-full object-cover" />
           </div>
         </motion.div>
