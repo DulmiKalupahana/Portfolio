@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="bg-black min-h-screen text-white relative selection:bg-blue-500 selection:text-white overflow-x-hidden">
     
-      {/* --- Content (z-10 to stay above background) --- */}
+      {/*  Content  */}
       <div className="relative z-10">
         <Navbar />
         <Hero />

@@ -2,23 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Scrollbar එකේ පළල */
+/* --- Custom Scrollbar Styling --- */
+
+/* Scrollbar  */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
-/* Scrollbar Track (පිටුපස) - කළු පාට */
+/* Scrollbar Track */
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #000000; 
 }
 
-/* Scrollbar Thumb (අපි අල්ලන කොටස) - තද නිල් සහ කොටු හැඩය */
+/* Scrollbar Thumb  */
 ::-webkit-scrollbar-thumb {
-  background: #1e3a8a; /* Dark Blue (Blue-900) */
-  border-radius: 0px;   /* Rectangle හැඩය එන්න මෙය 0px කරන්න */
+  background-color: #0077B6;
+  border-radius: 20px;
+  border: 2px solid #000000;
 }
 
-/* Mouse එක උඩට ගෙනාවම පාට වෙනස් වීම */
+/* Mouse  */
 ::-webkit-scrollbar-thumb:hover {
-  background: #172554; /* ඊටත් වඩා තද නිල් පාටක් (Blue-950) */
+  background-color: #00B4D8;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0077B6 #000000;
 }
